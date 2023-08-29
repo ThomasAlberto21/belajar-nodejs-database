@@ -3,3 +3,5 @@ CREATE TABLE sample(
     name VARCHAR(100) NOT NULL ,
     PRIMARY KEY (id)
 ) ENGINE Innodb;
+
+SELECT * FROM sample;

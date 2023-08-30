@@ -19,4 +19,6 @@ CREATE TABLE customers
 ) ENGINE Innodb;
 
 
+SELECT *
+FROM customers;
 

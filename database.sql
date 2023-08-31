@@ -32,13 +32,19 @@ CREATE TABLE products
     PRIMARY KEY (id)
 ) ENGINE Innodb;
 
-INSERT INTO products (id, name, stock, price, category_id)
+INSERT INTO products (id, name, price, stock, category_id)
 VALUES ('P0001', 'Buku', 1000, 10, 'K1'),
        ('P0002', 'Pulpen', 1200, 10, 'K1'),
        ('P0003', 'Pensil', 2000, 10, 'K1'),
        ('P0004', 'Tas', 10000, 10, 'K1'),
-       ('P0005', 'Kertas', 500, 10, 'K1');
+       ('P0005', 'Kertas', 500, 10, 'K1'),
+       ('P0006', 'Tinta', 5000, 12, 'K2'),
+       ('P0007', 'Lem', 10000, 11, 'K2'),
+       ('P0008', 'Karton', 2500, 11, 'K2'),
+       ('P0009', 'Sampul', 10000, 12, 'K2'),
+       ('P0010', 'Materai', 12000, 15, 'K2');
+
 
 
 SELECT *
-FROM products
+FROM products;

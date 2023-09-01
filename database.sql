@@ -48,3 +48,11 @@ VALUES ('P0001', 'Buku', 1000, 10, 'K1'),
 
 SELECT *
 FROM products;
+
+
+CREATE TABLE categories
+(
+    id   INT          NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE Innodb;

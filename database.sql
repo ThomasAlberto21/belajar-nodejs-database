@@ -56,3 +56,16 @@ CREATE TABLE categories
     name VARCHAR(100) NOT NULL,
     PRIMARY KEY (id)
 ) ENGINE Innodb;
+
+
+CREATE TABLE wallet
+(
+    id          VARCHAR(100) NOT NULL,
+    balance     INT          NOT NULL,
+    customer_id VARCHAR(100) NOT NULL,
+    CONSTRAINT wallet_customer_id_fk FOREIGN KEY (customer_id) REFERENCES customers (id),
+    CONSTRAINT wallet_id_unique UNIQUE (customer_id),
+    PRIMARY KEY (id)
+) ENGINE Innodb;
+
+

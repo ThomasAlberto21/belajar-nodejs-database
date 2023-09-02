@@ -69,3 +69,18 @@ CREATE TABLE wallet
 ) ENGINE Innodb;
 
 
+CREATE TABLE comments
+(
+    id          INT          NOT NULL AUTO_INCREMENT,
+    customer_id VARCHAR(100) NOT NULL,
+    title       VARCHAR(100) NOT NULL,
+    description VARCHAR(200) NOT NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT comments_customer_id_fk FOREIGN KEY (customer_id) REFERENCES customers (id)
+) ENGINE Innodb;
+
+INSERT INTO comments (customer_id, title, description)
+VALUES ("asep", "Comment 1", "Sample Comment 1"),
+       ("asep", "Comment 2", "Sample Comment 2"),
+       ("budi", "Comment 1", "Sample Comment 1"),
+       ("budi", "Comment 2", "Sample Comment 2");

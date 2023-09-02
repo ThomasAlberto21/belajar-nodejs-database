@@ -57,4 +57,41 @@ describe("Prisma Client", () => {
 
     console.info(JSON.stringify(customers));
   });
+
+  it("should create implicit relation", async () => {
+    const customer = await prismaClient.customer.update({
+      where: {
+        id: "asep",
+      },
+      data: {
+        loves: {
+          connect: [{ id: "P0001" }, { id: "P0002" }],
+        },
+      },
+      include: {
+        loves: true,
+      },
+    });
+
+    console.info(customer);
+  });
+
+  it("should can find many implicit relation", async () => {
+    const customer = await prismaClient.customer.findMany({
+      where: {
+        loves: {
+          some: {
+            name: {
+              contains: "Buku",
+            },
+          },
+        },
+      },
+      include: {
+        loves: true,
+      },
+    });
+
+    console.info(customer);
+  });
 });

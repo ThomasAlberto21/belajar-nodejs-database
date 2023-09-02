@@ -22,7 +22,7 @@ model Customer {
   phone    String    @unique
   wallet   Wallet?
   comments Comment[]
-  Likes    Like[]
+  likes    Like[]
 
   @@map("customers")
 }

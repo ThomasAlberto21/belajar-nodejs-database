@@ -84,3 +84,13 @@ VALUES ("asep", "Comment 1", "Sample Comment 1"),
        ("asep", "Comment 2", "Sample Comment 2"),
        ("budi", "Comment 1", "Sample Comment 1"),
        ("budi", "Comment 2", "Sample Comment 2");
+
+CREATE TABLE likes
+(
+    customer_id VARCHAR(100) NOT NULL,
+    product_id  VARCHAR(100) NOT NULL,
+    PRIMARY KEY (customer_id, product_id),
+    CONSTRAINT likes_customer_id_fk FOREIGN KEY (customer_id) REFERENCES customers (id),
+    CONSTRAINT likes_product_id_fk FOREIGN KEY (product_id) REFERENCES products (id)
+) ENGINE Innodb;
+
